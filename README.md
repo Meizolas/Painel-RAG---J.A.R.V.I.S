@@ -1,36 +1,168 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🤖 J.A.R.V.I.S — Assistente Inteligente com RAG (Next.js + n8n)
+===============================================================
 
-## Getting Started
+J.A.R.V.I.S é um **assistente inteligente corporativo**, inspirado em interfaces futuristas (HUD / sci-fi), que permite aos usuários tirarem dúvidas com base em uma **base de conhecimento interna (RAG)**.
 
-First, run the development server:
+O projeto integra **frontend moderno**, **automação inteligente com n8n** e **IA explicável**, entregando uma experiência visual avançada e profissional.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✨ Funcionalidades
+-----------------
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*   💬 Chat interativo com efeito de digitação (streaming)
+    
+*   🧠 IA baseada em **RAG (Retrieval-Augmented Generation)**
+    
+*   📚 Exibição de fontes utilizadas na resposta
+    
+*   ⚙️ Integração via webhook com **n8n**
+    
+*   🎨 Interface futurista estilo JARVIS (partículas, animações, HUD)
+    
+*   📱 Totalmente responsivo (desktop e mobile)
+    
+*   🔒 Uso de variáveis de ambiente para segurança
+    
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+🧱 Stack Tecnológica
+--------------------
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Next.js 14** (App Router)
+    
+*   **React**
+    
+*   **TypeScript**
+    
+*   **CSS Global customizado (HUD futurista)**
+    
+*   **Canvas / partículas animadas (JarvisOrb)**
+    
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend
 
-## Deploy on Vercel
+*   **API Routes do Next.js**
+    
+*   **n8n (Self-hosted ou Cloud)**
+    
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Integrações
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   Webhook HTTP
+    
+*   Base de conhecimento (documentação interna)
+    
+*   Possível integração com banco de dados / vector store
+    
+
+
+📂 Estrutura do Projeto
+-----------------------
+
+src/ ├─ app/
+
+│ ├─ api/
+
+│ │ └─ chat/
+
+│ │ └─ route.ts # Rota que comunica com o n8n
+
+│ └─ page.tsx # Interface principal (chat)
+
+│
+
+├─ components/
+
+│ ├─ JarvisOrb.tsx
+
+│ └─ JarvisOrbFX.tsx
+
+│
+
+├─ styles/
+
+│ └─ global.css
+
+│
+
+└─ .env
+
+
+▶️ Rodando o Projeto Localmente
+-------------------------------
+
+*   1️⃣ Instale as dependências npm install
+    
+*   2️⃣ Rode em modo desenvolvimento npm run dev
+    
+
+Acesse no navegador:
+
+[http://localhost:3000](http://localhost:3000/)
+
+🔌 Integração com o n8n
+-----------------------
+
+Fluxo de funcionamento:
+
+Usuário envia uma mensagem no chat
+
+Frontend chama /api/chat
+
+API Route encaminha para o webhook do n8n
+
+O n8n:
+
+Processa a pergunta
+
+Consulta a base de conhecimento (RAG)
+
+Retorna resposta + fontes
+
+O frontend renderiza a resposta com animações
+
+📤 Formato esperado da resposta do n8n
+--------------------------------------
+
+    {
+  
+        "answer": "Aqui está a resposta baseada na documentação.",
+  
+        "sources": [
+      
+            {
+    
+              "title": "Documento Interno",
+    
+              "section": "Seção 2.1",
+    
+              "snippet": "Trecho relevante da base de conhecimento."
+    
+            }
+    
+          ]
+
+      }
+
+
+📸 Preview
+----------
+
+Interface futurista inspirada em sistemas de IA corporativos e HUDs sci-fi, com foco em clareza, confiabilidade e experiência do usuário.
+<img width="1919" height="909" alt="image" src="https://github.com/user-attachments/assets/a414c66c-354d-454e-b762-9ada391553b5" />
+
+
+
+
+📄 Licença
+----------
+
+Uso livre para estudos, protótipos e aplicações internas. Adapte conforme as políticas da sua empresa.
+
+
+👨‍💻 Autor
+-----------
+
+Desenvolvido por Hélio Nunes - Projeto de IA • Automação • UX Futurista
