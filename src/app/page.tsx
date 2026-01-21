@@ -192,7 +192,6 @@ export default function Page() {
                   size={320}
                   label="J.A.R.V.I.S"
                   speaking={typing}
-                  particles={36}
                 />
               </div>
 
