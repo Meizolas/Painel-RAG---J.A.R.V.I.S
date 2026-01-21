@@ -192,8 +192,6 @@ export default function Page() {
                   size={320}
                   label="J.A.R.V.I.S"
                   speaking={typing}
-                  micReactive={false}
-                  syntheticReactive={true}
                   particles={36}
                 />
               </div>
